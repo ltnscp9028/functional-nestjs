@@ -21,7 +21,7 @@ export class UserValidator {
         return Prisma.validator<Prisma.UserFindUniqueArgs>()({
             rejectOnNotFound: true,
             where: {
-                id: Number(userId),
+                id: userId,
             },
         });
     }
@@ -29,7 +29,7 @@ export class UserValidator {
     updateUserValidator({ userId }: UpdateUserParam, { name }: UpdateUserBody) {
         return Prisma.validator<Prisma.UserUpdateArgs>()({
             where: {
-                id: Number(userId),
+                id: userId,
             },
             data: {
                 name,
@@ -40,7 +40,7 @@ export class UserValidator {
     deleteUserValidator({ userId }: DeleteUserParam) {
         return Prisma.validator<Prisma.UserUpdateArgs>()({
             where: {
-                id: Number(userId),
+                id: userId,
             },
             data: {
                 active: 0,
