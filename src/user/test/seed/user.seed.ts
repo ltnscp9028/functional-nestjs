@@ -1,6 +1,11 @@
 import { User } from '@prisma/client';
 
 export const seedUsers = (): Partial<User>[] => [
-    { id: 1, name: 'hello' },
-    { id: 2, name: 'world' },
+    { email: 'hello@gmail.com', name: 'hello' },
+    { email: 'world@gmail.com', name: 'world' },
 ];
+
+export const seedCreateUser = (): Pick<User, 'email' | 'name'> => ({
+    email: 'prisma@gmail.com',
+    name: 'prisma',
+});

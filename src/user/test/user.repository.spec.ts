@@ -2,11 +2,12 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { PrismaService } from '@prismaModule/prisma.service';
 import { UserRepository } from '@user/user.repository';
-import { seedUsers } from '@user/test/seed/user.seed';
+import { seedCreateUser, seedUsers } from '@user/test/seed/user.seed';
 
 const db = {
     user: {
         findMany: jest.fn().mockResolvedValue(seedUsers()),
+        create: jest.fn().mockResolvedValue(seedCreateUser()),
     },
 };
 
@@ -36,5 +37,12 @@ describe('UserController', () => {
 
     it('shoud get user', async () => {
         expect(await userRepository.getUsers()).toEqual(seedUsers());
+    });
+
+    it('should create user', async () => {
+        expect(await userRepository.createUser(seedCreateUser())).toEqual({
+            email: 'prisma@gmail.com',
+            name: 'prisma',
+        });
     });
 });
