@@ -20,4 +20,10 @@ export class UserRepository {
     ) {
         return this.prisma.user.create(userCreateInput);
     }
+
+    updateUser(
+        userUpdateInput: ReturnType<UserValidator['updateUserValidaotr']>,
+    ) {
+        return this.prisma.user.update(userUpdateInput);
+    }
 }

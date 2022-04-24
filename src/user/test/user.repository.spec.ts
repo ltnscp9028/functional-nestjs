@@ -2,12 +2,17 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { PrismaService } from '@prismaModule/prisma.service';
 import { UserRepository } from '@user/user.repository';
-import { seedCreateUser, seedUsers } from '@user/test/seed/user.seed';
+import {
+    seedCreateUser,
+    seedUpdateUser,
+    seedUsers,
+} from '@user/test/seed/user.seed';
 
 const db = {
     user: {
         findMany: jest.fn().mockResolvedValue(seedUsers()),
         create: jest.fn().mockResolvedValue(seedCreateUser()),
+        update: jest.fn().mockResolvedValue(seedUpdateUser()),
     },
 };
 
@@ -40,9 +45,29 @@ describe('UserController', () => {
     });
 
     it('should create user', async () => {
-        expect(await userRepository.createUser(seedCreateUser())).toEqual({
+        expect(
+            await userRepository.createUser({ data: seedCreateUser() }),
+        ).toEqual({
+            id: 3,
             email: 'prisma@gmail.com',
             name: 'prisma',
+        });
+    });
+
+    it('should update user', async () => {
+        expect(
+            await userRepository.updateUser({
+                where: {
+                    id: 1,
+                },
+                data: {
+                    name: 'y0on2q',
+                },
+            }),
+        ).toEqual({
+            id: 1,
+            email: 'hello@gmail.com',
+            name: 'y0on2q',
         });
     });
 });
