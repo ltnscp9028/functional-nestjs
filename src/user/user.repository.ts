@@ -11,9 +11,13 @@ export class UserRepository {
         return this.prisma.user.findMany();
     }
 
-    createUser(data: ReturnType<UserValidator['createUserValidator']>) {
-        return this.prisma.user.create({
-            data,
-        });
+    getUser(userFindUniqueArgs: ReturnType<UserValidator['getUserValidator']>) {
+        return this.prisma.user.findUnique(userFindUniqueArgs);
+    }
+
+    createUser(
+        userCreateInput: ReturnType<UserValidator['createUserValidator']>,
+    ) {
+        return this.prisma.user.create(userCreateInput);
     }
 }
