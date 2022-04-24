@@ -5,6 +5,7 @@ import { UserValidator } from '@user/user.validator';
 import { CreateUserBody } from '@user/dto/create_user.dto';
 import { GetUserParam } from '@user/dto/get_user.dto';
 import { UpdateUserBody, UpdateUserParam } from '@user/dto/update_user.dto';
+import { DeleteUserParam } from '@user/dto/delete_user.dto';
 @Injectable()
 export class UserService {
     constructor(
@@ -30,7 +31,13 @@ export class UserService {
 
     updateUser(param: UpdateUserParam, body: UpdateUserBody) {
         return this.userRepository.updateUser(
-            this.userValidator.updateUserValidaotr(param, body),
+            this.userValidator.updateUserValidator(param, body),
+        );
+    }
+
+    deleteUser(param: DeleteUserParam) {
+        return this.userRepository.deleteUser(
+            this.userValidator.deleteUserValidator(param),
         );
     }
 }

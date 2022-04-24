@@ -4,9 +4,11 @@ import { PrismaService } from '@prismaModule/prisma.service';
 import { UserRepository } from '@user/user.repository';
 import {
     seedCreateUser,
+    seedDeleteUser,
     seedUpdateUser,
     seedUsers,
 } from '@user/test/seed/user.seed';
+import { User } from '@prisma/client';
 
 const db = {
     user: {
@@ -68,6 +70,32 @@ describe('UserController', () => {
             id: 1,
             email: 'hello@gmail.com',
             name: 'y0on2q',
+        });
+    });
+
+    describe('should delete user', () => {
+        beforeAll(async () => {
+            jest.spyOn(prisma['user'], 'update').mockResolvedValue(
+                seedDeleteUser() as unknown as User,
+            );
+        });
+
+        it('should delete user', async () => {
+            expect(
+                await userRepository.deleteUser({
+                    where: {
+                        id: 1,
+                    },
+                    data: {
+                        active: 0,
+                    },
+                }),
+            ).toEqual({
+                id: 1,
+                email: 'hello@gmail.com',
+                name: 'hello',
+                active: 0,
+            });
         });
     });
 });

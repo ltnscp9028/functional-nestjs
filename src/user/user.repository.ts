@@ -22,7 +22,13 @@ export class UserRepository {
     }
 
     updateUser(
-        userUpdateInput: ReturnType<UserValidator['updateUserValidaotr']>,
+        userUpdateInput: ReturnType<UserValidator['updateUserValidator']>,
+    ) {
+        return this.prisma.user.update(userUpdateInput);
+    }
+
+    deleteUser(
+        userUpdateInput: ReturnType<UserValidator['deleteUserValidator']>,
     ) {
         return this.prisma.user.update(userUpdateInput);
     }

@@ -16,3 +16,13 @@ export const seedUpdateUser = (): Pick<User, 'id' | 'email' | 'name'> => ({
     email: 'hello@gmail.com',
     name: 'y0on2q',
 });
+
+export const seedDeleteUser = (): Pick<
+    User,
+    'id' | 'email' | 'name' | 'active'
+> => ({
+    id: 1,
+    email: 'hello@gmail.com',
+    name: 'hello',
+    active: 0,
+});
