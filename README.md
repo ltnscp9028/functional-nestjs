@@ -14,24 +14,24 @@ A production ready typescript backend repository utilized those libraries:
 - Learning functional-programming with Typescript.
 
 ## 3. Contents
-|index  | Name                                    | start-branch                                                                                             |complete-branch
-|-------|-----------------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------
-|0      |Setup and integraion Prisma with nestJS  |[start/integration-prisma](https://github.com/ltnscp9028/functional-nestjs/tree/start/integration/prisma) |[integration-prisma](https://github.com/ltnscp9028/functional-nestjs/tree/integration/prisma) 
-|1      |REST API with type-safe validator        |[start/crud-APi](https://github.com/ltnscp9028/functional-nestjs/tree/start/crudAPI)                      |[crud-API](https://github.com/ltnscp9028/functional-nestjs/tree/crudAPI)
-|2      |Handling Prisma Exception                |@TODO                                                                                                     |@TODO
-|3      |Authorization                            |@TODO                                                                                                     |@TODO
-|4      |Relation Data Structure                  |@TODO                                                                                                     |@TODO
-|5      |Use functional in API                    |@TODO                                                                                                     |@TODO
-|6      |Use functional in conditional type       |@TODO                                                                                                     |@TODO
-|INF    |More Contents.                           |@TODO                                                                                                     |@TODO
+|index  | Name                                    | start-branch                                                                                             |complete-branch                                                                                      |docs
+|-------|-----------------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|0      |Setup and integraion Prisma with nestJS  |[start/integration-prisma](https://github.com/ltnscp9028/functional-nestjs/tree/start/integration/prisma) |[integration-prisma](https://github.com/ltnscp9028/functional-nestjs/tree/integration/prisma)        |[docs/integration-prisma](https://github.com/ltnscp9028/functional-nestjs/blob/start/integration/prisma/docs/1.integraion-prisma.md)|
+|1      |REST API with type-safe validator        |[start/crud-API](https://github.com/ltnscp9028/functional-nestjs/tree/start/crudAPI)                      |[crud-API](https://github.com/ltnscp9028/functional-nestjs/tree/crudAPI)                             |[docs/crud-API](https://github.com/ltnscp9028/functional-nestjs/blob/main/docs/2.crud-api.md)                                       |
+|2      |Handling Prisma Exception                |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
+|3      |Authorization                            |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
+|4      |Relation Data Structure                  |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
+|5      |Use functional in API                    |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
+|6      |Use functional in conditional type       |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
+|INF    |More Contents.                           |@TODO                                                                                                     |@TODO                                                                                                |@TODO                                                                                                                               |
 
 * * *
 ### 3.1. Setup and integraion Prisma with nestJS
 - 1. Initialize prisma
 - 2. First prisma migration
 - 3. Implement prisma service
-- 6. Use prisma for /users api
-- 7. Implement explicit prisma connect
+- 4. Use prisma for /users api
+- 5. Implement explicit prisma connect
 
 ### 3.2 REST API with type-safe validator
 - 1. Implement user.validator
