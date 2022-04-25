@@ -30,8 +30,8 @@ A production ready typescript backend repository utilized those libraries:
 - 1. Initialize prisma
 - 2. First prisma migration
 - 3. Implement prisma service
-- 6. Use prisma for /users api
-- 7. Implement explicit prisma connect
+- 4. Use prisma for /users api
+- 5. Implement explicit prisma connect
 
 ### 3.2 REST API with type-safe validator
 - 1. Implement user.validator
