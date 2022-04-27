@@ -3,9 +3,9 @@ import { users } from './user.seed';
 
 const prisma = new PrismaClient();
 
-async function main() {
-    await Promise.all([]);
-}
+const main = async () => {
+    await prisma.user.createMany(users);
+};
 
 main()
     .catch(e => {
